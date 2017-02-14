@@ -2,7 +2,9 @@
 
 Using the API provided by the BTC pool to obtain the running status and user account information in real time.
 
-## API Call the path as follows
+## API structure
+
+API Call the path as follows:
 
 `https://${Endpoint}/${Version}/${Path}`
 
@@ -16,14 +18,14 @@ Using the API provided by the BTC pool to obtain the running status and user acc
 ## Authentication
 
 * Calling the user-related interface requires the `access_key` and` puid` authentication in the querystring.
-AccessKey is one of the important credentials, please protect your own AccessKey.
-Puid is the pool account id, used to distinguish between multiple subaccounts under an account.
+    * AccessKey is one of the important credentials, please protect your own AccessKey.
+    * Puid is the pool account id, used to distinguish between multiple subaccounts under an account.
 
 * AccessKey and puid can go to the pool.btc.com login account and get it on the subaccount management page.
 
 ## Response
 
-* All response types are `application / json`, as follows:
+All response types are `application / json`, as follows:
    
 ``` json
 {
@@ -33,10 +35,11 @@ Puid is the pool account id, used to distinguish between multiple subaccounts un
 }
 ```
 
-* In the response body, `data`,` err_no` and `err_msg` are fixed fields. The meaning is as follows:
-    * `data`，Specific API response data
-    * `error_no`，Error code, `0` for normal, not `0` is wrong, specifically view `error_msg` field
-    * `error_msg`，Error message for debugging use. If there is no error, this field does not appear.
+In the response body, `data`,` err_no` and `err_msg` are fixed fields. The meaning is as follows:
+
+* `data`，Specific API response data
+* `error_no`，Error code, `0` for normal, not `0` is wrong, specifically view `error_msg` field
+* `error_msg`，Error message for debugging use. If there is no error, this field does not appear.
 
 
 ## Account
