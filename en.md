@@ -12,7 +12,7 @@ API Call the path as follows:
     * China `cn-pool.api.btc.com`
     * America `us-pool.api.btc.com`
 
-* Version： v1
+* Version： `v1`
 * Path: For specific API paths, see the definitions below
 
 ## Authentication
@@ -35,11 +35,11 @@ All response types are `application / json`, as follows:
 }
 ```
 
-In the response body, `data`,` err_no` and `err_msg` are fixed fields. The meaning is as follows:
+In the response body, `data`, ` err_no` and `err_msg` are fixed fields. The meaning is as follows:
 
-* `data`,Specific API response data.
-* `error_no`,Error code, `0` for normal, not `0` is wrong, specifically view `error_msg` field.
-* `error_msg`,Error message for debugging use. If there is no error, this field does not appear.
+* `data`, Specific API response data.
+* `error_no`, Error code, `0` for normal, not `0` is wrong, specifically view `error_msg` field.
+* `error_msg`, Error message for debugging use. If there is no error, this field does not appear.
 
 
 ## Account
