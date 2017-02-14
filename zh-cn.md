@@ -1,19 +1,30 @@
-# BTC.COM 矿池API文档
+# BTC.com 矿池API文档
 
-您的应用可以使用 BTC.COM 提供的矿池API， 实时获取 BTC.COM Pool的运行状态以及用户的帐号详情。
+使用 BTC 矿池提供的 API，实时获取矿池运行状态及用户帐号信息。
 
-## API结构
+## API 调用路径如下：
 
-本API由Domain,Version和Path构成。 
-例如： `https://cn-pool.api.btc.com/public/v1/pool/stats`
+`https://${Endpoint}/${Version}/${Path}`
 
-* Domain： 目前有中国和美国两个节点 `cn-pool.api.btc.com` 和 `us-pool.api.btc.com`。 除非明确声明，返回结果只包含当前节点数据。
-* Version： 目前版本 v1。
-* 调用用户相关接口时需要提供 AccessKey 和 puid 等相关参数鉴权, AccessKey是身份凭据之一, 请用户保管好自己的AccessKey。
-    * AccessKey 和 puid 可以到 pool.btc.com 登录账户，在子账户管理页获取
+其中：
+
+* Endpoint：
+    * 中国 `cn-pool.api.btc.com`
+    * 美国 `us-pool.api.btc.com`
+
+* Version： v1
+* Path: 具体的 API 路径，参见下文定义
+
+## 鉴权
+* 调用用户相关接口时需要在querystring提供 `access_key` 和 `puid` 鉴权.
+AccessKey是身份凭据之一, 请用户保管好自己的AccessKey。
+Puid 是矿池子帐户id, 用来区分一个帐户下的多个子帐户。
+* AccessKey 和 puid 可以到 pool.btc.com 登录账户，在子账户管理页获取
+
+## 响应
 * 所有的响应类型均为`application/json`，如下：
-   
-```
+
+``` json
 {
     "data": ...,        -- 具体的 API 响应结果
     "err_no": 0,
@@ -27,42 +38,11 @@
     * `error_msg`，错误信息，供调试使用。如果没有错误，则此字段不出现。
 
 
-## 矿池接口
-
-### 矿池状态
-
-当前节点： `GET https://cn-pool.api.btc.com/public/v1/pool/stats`
-
-全部节点： `GET https://cn-pool.api.btc.com/public/v1/pool/stats/merge`
-
-##### 响应：
-```
-{
-    "err_no": 0,
-    "data": {
-        "shares": {
-            "shares_1m": 114.6,
-            "shares_5m": 115.6,
-            "shares_15m": 115.8,
-            "shares_unit": "P"
-        },
-        "reject": {
-            "1m": 0,
-            "5m": 0,
-            "15m": 0.0007
-        },
-        "workers": 15424,
-        "users": 555
-    }
-}
-```
-
-
 ## 帐号
 
 ### 用户信息
 
-`GET https://cn-pool.api.btc.com/v1/account/info`
+`GET https://${Endpoint}/v1/account/info`
 
 #### 参数
 
@@ -106,7 +86,7 @@
 
 ### 账户收益状态
 
-`GET https://cn-pool.api.btc.com/v1/account/earn-stats`
+`GET https://${Endpoint}/v1/account/earn-stats`
 
 #### 参数
 
@@ -133,7 +113,7 @@
 
 #### 账户收益历史
 
-`GET https://cn-pool.api.btc.com/v1/account/earn-history`
+`GET https://${Endpoint}/v1/account/earn-history`
 
 #### 参数
 
@@ -186,7 +166,8 @@
 ## 用户算力
 
 ### 实时算力
-`GET https://cn-pool.api.btc.com/v1/realtime/hashrate`
+
+`GET https://${Endpoint}/v1/realtime/hashrate`
 
 #### 参数
 
@@ -211,7 +192,7 @@
 
 ### 实时统计
 
-`GET https://cn-pool.api.btc.com/v1/worker/stats`
+`GET https://${Endpoint}/v1/worker/stats`
 
 #### 参数
 

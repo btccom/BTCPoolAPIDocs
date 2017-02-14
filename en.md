@@ -1,20 +1,31 @@
-# BTC.COM Pool API Doc
+# BTC.com Pool API Doc
 
-Your application can use BTC.COM provided mining pool API, real-time access to BTC.COM Pool
-get status and user account details.
+Using the API provided by the BTC pool to obtain the running status and user account information in real time.
 
-## API structure
+## API Call the path as follows
 
-The API is made up of `Domain`, `Version` and `Path`.
-eg: `https://us-pool.api.btc.com/public/v1/pool/stats`
+`https://${Endpoint}/${Version}/${Path}`
 
-* domain: There are two nodes in China and the United States `cn-pool.api.btc.com` and `us-pool.api.btc.com`. Unless explicitly stated, the return result contains only the current node data.
-* version: Current version v1
-* Calling the user-related interface need to provide AccessKey and puid authentication, AccessKey is one of the important credentials, please protect your own AccessKey.
-    * AccessKey and puid can go to the pool.btc.com login account and get it on the subaccount management page.
+* Endpoint：
+    * China `cn-pool.api.btc.com`
+    * America `us-pool.api.btc.com`
+
+* Version： v1
+* Path: For specific API paths, see the definitions below
+
+## Authentication
+
+* Calling the user-related interface requires the `access_key` and` puid` authentication in the querystring.
+AccessKey is one of the important credentials, please protect your own AccessKey.
+Puid is the pool account id, used to distinguish between multiple subaccounts under an account.
+
+* AccessKey and puid can go to the pool.btc.com login account and get it on the subaccount management page.
+
+## Response
+
 * All response types are `application / json`, as follows:
    
-```
+``` json
 {
     "data": ...,        -- Specific API response results
     "err_no": 0,
@@ -28,42 +39,11 @@ eg: `https://us-pool.api.btc.com/public/v1/pool/stats`
     * `error_msg`，Error message for debugging use. If there is no error, this field does not appear.
 
 
-## Pool interface
-
-### Pool Stats
-
-current node data： `GET https://us-pool.api.btc.com/public/v1/pool/stats`
-
-all node data： `GET https://us-pool.api.btc.com/public/v1/pool/stats/merge`
-
-##### Response：
-```
-{
-    "err_no": 0,
-    "data": {
-        "shares": {
-            "shares_1m": 114.6,
-            "shares_5m": 115.6,
-            "shares_15m": 115.8,
-            "shares_unit": "P"
-        },
-        "reject": {
-            "1m": 0,
-            "5m": 0,
-            "15m": 0.0007
-        },
-        "workers": 15424,
-        "users": 555
-    }
-}
-```
-
-
 ## Account
 
 ### account info
 
-`GET https://us-pool.api.btc.com/v1/account/info`
+`GET https://${Endpoint}/v1/account/info`
 
 #### Parameter
 
@@ -107,7 +87,7 @@ all node data： `GET https://us-pool.api.btc.com/public/v1/pool/stats/merge`
 
 ### Account earn stats
 
-`GET https://us-pool.api.btc.com/v1/account/earn-stats`
+`GET https://${Endpoint}/v1/account/earn-stats`
 
 #### Parameter
 
@@ -134,7 +114,7 @@ all node data： `GET https://us-pool.api.btc.com/public/v1/pool/stats/merge`
 
 #### Account earn history
 
-`GET https://us-pool.api.btc.com/v1/account/earn-history`
+`GET https://${Endpoint}/v1/account/earn-history`
 
 #### Parameter
 
@@ -187,7 +167,7 @@ all node data： `GET https://us-pool.api.btc.com/public/v1/pool/stats/merge`
 ## Account HashRate
 
 ### Real-time hashrate
-`GET https://us-pool.api.btc.com/v1/realtime/hashrate`
+`GET https://${Endpoint}/v1/realtime/hashrate`
 
 #### Parameter
 
@@ -214,7 +194,7 @@ all node data： `GET https://us-pool.api.btc.com/public/v1/pool/stats/merge`
 
 ### Real-time stats
 
-`GET https://us-pool.api.btc.com/v1/worker/stats`
+`GET https://${Endpoint}/v1/worker/stats`
 
 #### Parameter
 
