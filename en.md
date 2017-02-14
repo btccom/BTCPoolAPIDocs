@@ -18,7 +18,7 @@ API Call the path as follows:
 ## Authentication
 
 * Calling the user-related interface requires the `access_key` and` puid` authentication in the querystring.
-    * AccessKey is one of the important credentials, please protect your own AccessKey.
+    * AccessKey is the user credentials, corresponding to an account, please protect your own AccessKey.
     * Puid is the pool account id, used to distinguish between multiple subaccounts under an account.
 
 * AccessKey and puid can go to the pool.btc.com login account and get it on the subaccount management page.
@@ -37,16 +37,16 @@ All response types are `application / json`, as follows:
 
 In the response body, `data`,` err_no` and `err_msg` are fixed fields. The meaning is as follows:
 
-* `data`，Specific API response data
-* `error_no`，Error code, `0` for normal, not `0` is wrong, specifically view `error_msg` field
-* `error_msg`，Error message for debugging use. If there is no error, this field does not appear.
+* `data`,Specific API response data.
+* `error_no`,Error code, `0` for normal, not `0` is wrong, specifically view `error_msg` field.
+* `error_msg`,Error message for debugging use. If there is no error, this field does not appear.
 
 
 ## Account
 
 ### account info
 
-`GET https://${Endpoint}/v1/account/info`
+`GET /account/info`
 
 #### Parameter
 
@@ -90,7 +90,7 @@ In the response body, `data`,` err_no` and `err_msg` are fixed fields. The meani
 
 ### Account earn stats
 
-`GET https://${Endpoint}/v1/account/earn-stats`
+`GET /account/earn-stats`
 
 #### Parameter
 
@@ -117,7 +117,7 @@ In the response body, `data`,` err_no` and `err_msg` are fixed fields. The meani
 
 #### Account earn history
 
-`GET https://${Endpoint}/v1/account/earn-history`
+`GET /account/earn-history`
 
 #### Parameter
 
@@ -170,7 +170,7 @@ In the response body, `data`,` err_no` and `err_msg` are fixed fields. The meani
 ## Account HashRate
 
 ### Real-time hashrate
-`GET https://${Endpoint}/v1/realtime/hashrate`
+`GET /realtime/hashrate`
 
 #### Parameter
 
@@ -197,7 +197,7 @@ In the response body, `data`,` err_no` and `err_msg` are fixed fields. The meani
 
 ### Real-time stats
 
-`GET https://${Endpoint}/v1/worker/stats`
+`GET /worker/stats`
 
 #### Parameter
 
