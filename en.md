@@ -27,7 +27,7 @@ Puid is the pool account id, used to distinguish between multiple subaccounts un
    
 ``` json
 {
-    "data": ...,        -- Specific API response results
+    "data": ...,
     "err_no": 0,
     "err_msg": null 
 }

@@ -26,7 +26,7 @@ Puid 是矿池子帐户id, 用来区分一个帐户下的多个子帐户。
 
 ``` json
 {
-    "data": ...,        -- 具体的 API 响应结果
+    "data": ...,
     "err_no": 0,
     "err_msg": null 
 }
