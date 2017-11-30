@@ -13,6 +13,8 @@
 * Endpoint：
     * 中国 `cn-pool.api.btc.com`
     * 美国 `us-pool.api.btc.com`
+    * 深证 `sz-pool.api.btc.com`
+    * 欧洲 `eu-pool.api.btc.com`
 
 * Version： `v1`
 * Path: 具体的 API 路径，参见下文定义。

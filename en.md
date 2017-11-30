@@ -11,6 +11,8 @@ API Call the path as follows:
 * Endpoint：
     * China `cn-pool.api.btc.com`
     * America `us-pool.api.btc.com`
+    * Shenzhen, China `sz-pool.api.btc.com`
+    * Europe `eu-pool.api.btc.com`
 
 * Version： `v1`
 * Path: For specific API paths, see the definitions below
