@@ -8,11 +8,21 @@ API Call the path as follows:
 
 `https://${Endpoint}/${Version}/${Path}`
 
-* Endpoint：
-    * China `cn-pool.api.btc.com`
-    * America `us-pool.api.btc.com`
-    * Shenzhen, China `sz-pool.api.btc.com`
-    * Europe `eu-pool.api.btc.com`
+* Endpoint： 
+   * BTC
+      * China `cn-pool.api.btc.com`
+      * Shenzhen, China `sz-pool.api.btc.com`
+      * America `us-pool.api.btc.com`
+      * Europe `eu-pool.api.btc.com`
+   * BCH
+      * China `cn-bccpool.api.btc.com`
+      * Shenzhen, China `sz-bccpool.api.btc.com`
+      * America `us-bccpool.api.btc.com`
+   * SBTC
+      * China `cn-sbtcpool.api.btc.com`
+   * UBTC
+      * China `cn-ubtcpool.api.btc.com`
+
 
 * Version： `v1`
 * Path: For specific API paths, see the definitions below

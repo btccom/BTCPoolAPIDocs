@@ -10,11 +10,21 @@
 
 其中：
 
-* Endpoint：
-    * 中国 `cn-pool.api.btc.com`
-    * 美国 `us-pool.api.btc.com`
-    * 深证 `sz-pool.api.btc.com`
-    * 欧洲 `eu-pool.api.btc.com`
+* Endpoint： 
+   * BTC
+      * 中国 `cn-pool.api.btc.com`
+      * 深圳 `sz-pool.api.btc.com`
+      * 美国 `us-pool.api.btc.com`
+      * 欧洲 `eu-pool.api.btc.com`
+   * BCH
+      * 中国 `cn-bccpool.api.btc.com`
+      * 深圳 `sz-bccpool.api.btc.com`
+      * 美国 `us-bccpool.api.btc.com`
+   * SBTC
+      * 中国 `cn-sbtcpool.api.btc.com`
+   * UBTC
+      * 中国 `cn-ubtcpool.api.btc.com`
+
 
 * Version： `v1`
 * Path: 具体的 API 路径，参见下文定义。
