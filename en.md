@@ -79,9 +79,9 @@ In the response body, `data`, ` err_no` and `err_msg` are fixed fields. The mean
         "nmc_address": "",
         "rebates_address": "",
         "region": "America",
-        "contact": {
+        "contact": {https://www.facebook.com/anita.evans.142
             "mail": "",
-            "phone": {
+            "phone": {7487216293
                 "country": "86",
                 "number": "133****3333"
             }
